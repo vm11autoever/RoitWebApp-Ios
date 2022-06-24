@@ -184,38 +184,6 @@ extension MyWebview.Coordinator : WKNavigationDelegate{
                   }            
         }.store(in: &subscriptions)
     }
-    func PreLogin()
-    {
-        
-    }
-    func GetLocale()
-    {
-        SendPost(url:"https://vccs2.hmc.co.kr/mris/module/api/?actionType=getLocale&callback=asdf&dataType=json&locale=ko")
-    }
-    func SendPost(url:String)
-    {
-        let url = URL(string: (url))!
-                      
-        var request = URLRequest(url: url)
-        request.httpMethod = "GET"
-        request.setValue("0", forHTTPHeaderField: "Content-Length")
-        request.setValue("*/*", forHTTPHeaderField: "Accept")
-        request.setValue("gzip, deflate, br", forHTTPHeaderField: "Accept-Encoding")
-        request.setValue("keep-alive", forHTTPHeaderField: "Connection")
-
-        print(request)
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data, error == nil else {
-                print(error?.localizedDescription ?? "No data")
-                return
-            }
-            let responseJSON = try? JSONSerialization.jsonObject(with: data, options: [])
-            if let responseJSON = responseJSON as? [String: Any] {
-                print(responseJSON)
-            }
-                    }
-        task.resume()
-    }
     func SaveToken_to_KCC(IsDev:Bool, token:String, user: String)
     {
         let url_dev = IsDev ? "http://koupdev.kccworld.net/api/setuserdevice" : "https://koup.kccworld.net/api/setuserdevice"
