@@ -23,7 +23,7 @@ struct ContentView: View {
     
 //    @State var url : String = "https://vccs2.hmc.co.kr/mris/module/api/?locale=ko&actionType=getLocale&dataType=json&callback=asdf"
 //    @State var url : String = "https://webrtc.github.io/samples/src/content/getusermedia/gum/"
-    @State var url : String = "https://janus.conf.meetecho.com/mvideoroomtest.html"
+    @State var url : String = "https://vm11autoever.github.io/index.html"
     
 
 //    @State var url : String = "https://vccs2.hmc.co.kr/mris/module/api/?actionType=getWhiteList&mac=17A83934-55B2-4FAF-AD64-A194409C95E2&dataType=json&callback=asdf"
